@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecureGuard Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🛡️ SecureGuard Admin</div>
+  <nav>
+    <button class="nav-btn active" onclick="showThreats()">⚡ Threats</button>
+    <button class="nav-btn" onclick="showActivity()">🕒 Activity</button>
+    <button class="nav-btn logout" onclick="logout()">Logout</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="admin-hero">
+  <h1>Admin Dashboard</h1>
+  <p>Threats and activity logs (Admin only)</p>
+</section>
+
+<!-- CONTENT -->
+<main class="container">
+
+  <!-- THREATS PAGE (UNCHANGED) -->
+  <section id="threatsPage">
+    <h2 class="section-title">🛡️ Threat Dashboard</h2>
+    <p class="section-subtitle">
+      Monitor and respond to security threats in real-time
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>9</h3>
+        <span>Total Scans</span>
+      </div>
+      <div class="stat-card">
+        <h3>0</h3>
+        <span>Threats Detected</span>
+      </div>
+      <div class="stat-card">
+        <h3>0</h3>
+        <span>Active Incidents</span>
+      </div>
+      <div class="stat-card">
+        <h3>0</h3>
+        <span>Alerts Sent</span>
+      </div>
+    </div>
+
+    <button class="simulate-btn">+ Simulate Threat</button>
+
+    <div class="all-clear">
+      <div class="icon">🛡️</div>
+      <h3>All Clear!</h3>
+      <p>No threats detected. Your system is secure.</p>
+    </div>
+  </section>
+
+  <!-- ACTIVITY PAGE (NEW LAYOUT) -->
+  <section id="activityPage" style="display:none">
+    <h2 class="section-title">🕒 Activity Log</h2>
+    <p class="section-subtitle">
+      Complete history of all security events and actions
+    </p>
+
+    <!-- Controls -->
+    <div class="activity-controls">
+      <input type="text" placeholder="Search by description, IP, or email..." />
+      <select>
+        <option>All Types</option>
+        <option>Password Check</option>
+        <option>Login Attempt</option>
+        <option>Threat</option>
+      </select>
+    </div>
+
+    <!-- Table -->
+    <div class="activity-table">
+      <div class="table-header">
+        <span>Time</span>
+        <span>Type</span>
+        <span>Severity</span>
+        <span>Description</span>
+        <span>Status</span>
+        <span>Actions</span>
+      </div>
+
+      <div class="table-row">
+        <span>Jan 19, 10:14 AM</span>
+        <span class="pill">Password Check</span>
+        <span class="badge low">LOW</span>
+        <span>Password strength check performed. Score: 60/100</span>
+        <span class="status resolved">✔ Resolved</span>
+        <span class="action">🗑️</span>
+      </div>
+
+      <div class="table-row">
+        <span>Jan 19, 10:14 AM</span>
+        <span class="pill">Password Check</span>
+        <span class="badge medium">MEDIUM</span>
+        <span>Password strength check performed. Score: 36/100</span>
+        <span class="status resolved">✔ Resolved</span>
+        <span class="action">🗑️</span>
+      </div>
+
+      <div class="table-row">
+        <span>Jan 19, 9:59 AM</span>
+        <span class="pill">Password Check</span>
+        <span class="badge low">LOW</span>
+        <span>Password strength check performed. Score: 100/100</span>
+        <span class="status resolved">✔ Resolved</span>
+        <span class="action">🗑️</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

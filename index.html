@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SecureGuard – Password Strength Analyzer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">🛡️ SecureGuard</div>
+  <nav>
+    <button class="nav-btn active">🔐 Analyzer</button>
+    <button class="nav-btn" onclick="openAdmin()">👤 Admin Login</button>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-icon">🔒</div>
+    <h1>Password Strength Analyzer</h1>
+    <p>AI-powered security analysis to protect your digital identity</p>
+  </section>
+
+  <section class="grid">
+
+    <!-- LEFT -->
+    <div class="left-col">
+
+      <div class="card">
+        <h3>🔐 Enter Your Password</h3>
+
+        <div class="password-box">
+          <input id="password" type="password" placeholder="Type your password here..." />
+          <span id="toggle">👁</span>
+        </div>
+
+        <div class="actions">
+          <button class="analyze-btn">✨ Analyze with AI</button>
+          <button class="refresh-btn">⟳</button>
+        </div>
+      </div>
+
+      <div class="card criteria-card">
+        <h3>Security Criteria</h3>
+        <ul class="criteria">
+          <li id="len">❌ At least 12 characters</li>
+          <li id="upper">❌ Contains uppercase letter</li>
+          <li id="lower">❌ Contains lowercase letter</li>
+          <li id="num">❌ Contains number</li>
+          <li id="special">❌ Contains special character</li>
+          <li id="common">❌ Not a common password</li>
+          <li id="seq">❌ No sequential characters</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card analysis-card">
+      <h3>✨ AI Security Analysis</h3>
+      <div class="analysis-box">
+        <div class="analysis-icon">✨</div>
+        <p>
+          Enter a password and click<br>
+          <strong>"Analyze with AI"</strong><br>
+          to get detailed security recommendations
+        </p>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal" id="adminModal">
+  <div class="modal-card">
+    <h3>Admin Login</h3>
+
+    <input type="email" placeholder="Admin Email">
+    <input type="password" placeholder="Password">
+
+    <button class="analyze-btn" onclick="loginAdmin()">Login</button>
+
+    <p class="forgot" onclick="forgotPassword()">Forgot password?</p>
+
+    <span class="close" onclick="closeAdmin()">✕</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
